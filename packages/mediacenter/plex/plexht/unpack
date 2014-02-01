@@ -43,3 +43,4 @@ patch $PKG_NAME-$PKG_VERSION/plex/CMakeModules/PlatformConfigLINUX.cmake < $PKG_
 patch $PKG_NAME-$PKG_VERSION/addons/skin.plex/720p/LeftSideMenu.xml < $PKG_DIR/patches/skinplex.patch
 patch $PKG_NAME-$PKG_VERSION/addons/skin.plex/720p/Font.xml < $PKG_DIR/patches/fontfix.patch
 #patch $PKG_NAME-$PKG_VERSION/plex/CMakeModules/PlatformConfigPOSIX.cmake < $PKG_DIR/patches/externalffmpeg.patch
+patch $PKG_NAME-$PKG_VERSION/plex/CMakeModules/CheckCrystalHDInclude.cmake < $PKG_DIR/patches/crystalhd.patch
