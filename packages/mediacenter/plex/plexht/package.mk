@@ -271,7 +271,7 @@ export PKG_CONFIG_PATH=$SYSROOT_PREFIX/usr/lib/pkgconfig
 cd $ROOT/$BUILD/$PKG_NAME-$PKG_VERSION/config
 export CPLUS_INCLUDE_PATH="$SYSROOT_PREFIX/usr/include/python$PYTHON_VERSION"
 export PYTHON_LIBDIR=`ls -d $SYSROOT_PREFIX/usr/lib/python*`
-make -j1
+make -j4
 
 }
 
@@ -317,6 +317,11 @@ post_makeinstall_target() {
 
     if [ -f $PKG_DIR/config/sources.xml ]; then
       cp -R $PKG_DIR/config/sources.xml $INSTALL/usr/share/XBMC/config
+    fi
+# Install autostart.sh script
+
+    if [ -f $PKG_DIR/scripts/autostart.sh ]; then
+      cp -R $PKG_DIR/scripts/autostart.sh $INSTALL/usr/share/XBMC/config ; chmod -x $INSTALL/usr/share/XBMC/config/autostart.sh
     fi
 
   mkdir -p $INSTALL/usr/share/XBMC/system/
