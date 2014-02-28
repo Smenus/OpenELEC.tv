@@ -38,7 +38,8 @@ if [ "$OPENELEC_VERSION" = devel -o "$OPENELEC_VERSION" = debug ]; then
   OPENELEC_VERSION=$OPENELEC_VERSION-$BUILD_DATE-r$GIT_BUILD
 fi
 
-TARGET_VERSION="$PROJECT.$TARGET_ARCH-$OPENELEC_VERSION"
+PHT_VERSION="`wget -q -O - https://raw2.github.com/plexinc/plex-home-theater-public/pht-frodo/CMakeLists.txt --no-check-certificate | awk '/MAJOR |MINOR |PATCH / {gsub(")",""); printf $2"."}  END {print ""}'| sed 's/.$//g'`"
+TARGET_VERSION="$PROJECT-$OPENELEC_VERSION-$BUILD_NUMBER-Plex-Home-Theater-$PHT_VERSION.$TARGET_ARCH"
 IMAGE_NAME="$DISTRONAME-$TARGET_VERSION"
 
 # setup fakeroot
