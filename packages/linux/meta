@@ -34,7 +34,7 @@ case "$LINUX" in
     PKG_URL="$DISTRO_SRC/$PKG_NAME-$PKG_VERSION.tar.bz2"
     ;;
   *)
-    if [ "$PROJECT" = "Plex-Intel" ]; then
+    if [ "$PROJECT" = "Plex-Intel" -o "$PROJECT" = "Plex-Intel-MacMini" ]; then
       PKG_VERSION="3.13.6"
     else
       PKG_VERSION="3.10.24"
